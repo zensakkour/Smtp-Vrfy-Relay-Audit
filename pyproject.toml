@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smtp-vrfy-relay-audit"
+version = "1.0.0"
+description = "SMTP relay/spoofing/VRFY auditing toolkit for authorized security assessments"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Zen Sakkour" }
+]
+license = { text = "MIT" }
+keywords = ["smtp", "security", "pentest", "relay", "spoofing", "vrfy"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "License :: OSI Approved :: MIT License",
+  "Intended Audience :: Information Technology",
+  "Topic :: Security",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2",
+]
+
+[project.scripts]
+smtp-vrfy-relay-audit = "smtp_audit.cli:main"
+smtp-audit = "smtp_audit.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["smtp_audit*"]
